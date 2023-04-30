@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Staff Table</title>
+        <style>
+            body{
+                background-color:#790252;
+                
+            }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            
+          }
+          tr:nth-child(odd) {color: white;}
+          
+          th, td {
+            text-align: left;
+            padding: 8px;
+            text-align:center
+          }
+          
+          tr:nth-child(even){background-color: #f2f2f2}
+          
+          th {
+            background-color: #04AA6D;
+            color: white;
+          }
+          tr:hover{
+            background-color: black;
+            color:white;
+
+          }
+        </style>
+  
+    </head>
+    <body>
+        <table>
+            <thead>
+                
+                <th>St_id</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Experience</th>
+                <th>Phone</th>
+                <th>Email</th> 
+                <th>Salary</th>     
+                <th></th>   
+                <th></th>        
+            </thead>
+            <tbody>
+                <tr>
+                {% for x in data%}
+                <td>{{x.St_id}}</td>
+                <td>{{x.Name}}</td>
+                <td>{{x.Department}}</td>
+                <td>{{x.Experience}}</td>
+                <td>{{x.Phone}}</td>
+                <td>{{x.Email}}</td>
+                <td>{{x.Salary}}</td>
+                <td><a href="/updatestaff/{{x.id}}">Update</a></td>
+                <td><a href="/deletestaff/{{x.id}}">Delete</a></td>
+                </tr>
+                {% endfor%}
+            </tbody>
+        </table>
+    </body>
+</html>

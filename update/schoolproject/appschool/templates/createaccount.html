@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Login page</title>
+        <style>
+            body{
+               background-color : #0E8388;
+               text-align : center;
+           }
+           h2{
+               color:white;
+               text-align : center;
+           }
+           form{
+               background-color :#2E4F4F;
+               padding:20px
+           }
+           label{
+               font-size :25px;
+               color:#ECF0F1 ;
+           }
+           .sub{
+               background-color: #04AA6D;
+               border: none;
+               color: white;
+               padding: 16px 32px;
+               text-decoration: none;
+               margin: 4px 2px;
+               
+           }
+           .sub:hover{
+               background-color: #008CBA;
+           }
+           input[type=submit]{
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+           }
+
+       </style>
+    </head>
+    <body>
+        <h2>New Account</h2>
+        <hr>
+        <form action="/create/" method="post">
+            {% csrf_token %}
+            <label>First Name</label>
+            <input type="text" name="firstname"><br><br>
+            <label>Last Name</label>
+            <input type="text" name="lastname"><br><br>
+            <label>email</label>
+            <input type="email" name="email"><br><br>
+            
+            <label>status(0 for principal, 1 for Teachers)</label>
+            <input type="text" name="status" placeholder=" 0 or 1"><br><br>
+        
+             
+             <label>Username</label>
+            <input type="text" name="username"><br><br>
+            <label>Password</label>
+            <input type="password" name="password"><br><br>
+            <input type="submit" value="Submit"><br><br>
+            
+           
+        </form>
+    </body>
+    </html>
+

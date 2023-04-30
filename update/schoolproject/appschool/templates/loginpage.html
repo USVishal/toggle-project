@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Login page</title>
+        <style>
+            body{
+               background-color : #0E8388;
+               text-align : center;
+           }
+           h2{
+               color:white;
+               text-align : center;
+           }
+           form{
+               background-color :#2E4F4F;
+               padding:20px
+           }
+           label{
+               font-size :25px;
+               color:#ECF0F1 ;
+           }
+           .sub{
+               background-color: #04AA6D;
+               border: none;
+               color: white;
+               padding: 16px 32px;
+               text-decoration: none;
+               margin: 4px 2px;
+               
+           }
+           .sub:hover{
+               background-color: #008CBA;
+           }
+           a{
+            text-decoration:none;
+            color:white;
+
+           }
+           a:hover{
+           
+            color:black;
+
+           }
+           input[type=submit]{
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+           }
+
+       </style>
+    </head>
+    <body>
+        <h2>Login Page</h2>
+        <hr>
+        <form action="/login/" method="post">
+            {% csrf_token %}
+            <label>username</label>
+            <input type="text" name="username"><br><br>
+            <label>Password</label>
+            <input type="password" name="password"><br><br>
+            
+            <input type="submit" value="Login here"><br><br>
+            <a href="/newaccount/">Create account</a>
+        </form>
+    </body>
+    </html>
+

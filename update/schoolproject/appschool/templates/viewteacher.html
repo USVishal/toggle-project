@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Teacher Table</title>
+        <style>
+            body{
+                background-color:#790252;
+                
+            }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            
+          }
+          tr:nth-child(odd) {color: white;}
+          
+          th, td {
+            text-align: left;
+            padding: 8px;
+            text-align:center
+          }
+          
+          tr:nth-child(even){background-color: #f2f2f2}
+          
+          th {
+            background-color: #04AA6D;
+            color: white;
+          }
+          tr:hover{
+            background-color: black;
+            color:white;
+
+          }
+        </style>
+  
+    </head>
+    <body>
+        <table>
+            <thead>
+                
+                <th>T_id</th>
+                <th>Name</th>
+                <th>Joining_Date</th>            
+                <th>Phone</th>
+                <th>Email</th> 
+                <th>Address</th> 
+                <th>Salary</th> 
+                <th>Subject</th>
+                <th></th>   
+                <th></th>             
+            </thead>
+            <tbody>
+                <tr>
+                {% for x in data %}
+                <td>{{x.T_id}}</td>
+                <td>{{x.Name}}</td>
+                
+                <td>{{x.Phone}}</td>
+                <td>{{x.Email}}</td>
+                <td>{{x.Address}}</td>
+                <td>{{x.Salary}}</td>
+                <td>{{x.Subject}}</td>
+                <td><a href="/updateteacher/{{x.id}}">Update</a></td>
+                <td><a href="/deleteteacher/{{x.id}}">Delete</a></td>
+                </tr>
+                {% endfor%}
+            </tbody>
+        </table>
+    </body>
+</html>
