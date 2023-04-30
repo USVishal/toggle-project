@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Add Student</title>
+        <style>
+             body{
+                background-color : #0E8388;
+                text-align : center;
+            }
+            h1{
+                color:white;
+                text-align : center;
+            }
+            form{
+                background-color :#2E4F4F;
+                padding:20px
+            }
+            label{
+                font-size :25px;
+                color:#ECF0F1 ;
+            }
+            .sub{
+                background-color: #04AA6D;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                
+            }
+            .sub:hover{
+                background-color: #008CBA;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>STUDENT DETAILS</h1><hr><br>
+        <form action="/updatestudent1/{{data.id}}" method="post">
+        {% csrf_token %}
+        <label>ID</label>
+        <input type="number" name="S_id" value={{ data.S_id }}> <br><br>
+        <label>Name</label>
+        <input type="text" name="Name" value={{ data.Name }}> <br><br>
+        <label>Class</label>
+        <input type="number" name="Student_class" value={{ data.Student_class }}> <br><br>
+        <label>Marks</label>
+        <input type="number" name="Marks" value={{ data.Marks }}> <br><br>
+        <label>Status</label>
+        <input type="text" name="Status" value={{ data.Status }}> <br><br>
+        <label>Parent Name</label>
+        <input type="text" name="Parent_Name" value={{ data.Parent_Name }}> <br><br>
+        <label>Contact Number</label>
+        <input type="number" name="Contact_Number" value={{ data.Contact_Number }}> <br><br>
+        <input type="submit">    
+        </form>  
+    </body>
+</html>
